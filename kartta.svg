@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 620 949"
+   height="949"
+   width="620"
+   id="svg4583"
+   version="1.1"
+   sodipodi:docname="kartta.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2560"
+     inkscape:window-height="1388"
+     id="namedview4737"
+     showgrid="false"
+     inkscape:zoom="0.70338124"
+     inkscape:cx="409.05454"
+     inkscape:cy="430.66182"
+     inkscape:window-x="2560"
+     inkscape:window-y="298"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4583" />
+  <script
+     type="text/javascript"
+     id="script4721"><![CDATA[
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      console.log(this.status);
+      if (this.readyState == 4 && this.status == 200) {
+        var data = JSON.parse(this.responseText);
+        console.log(data);
+
+        var now = new Date();
+        var timestamps = {};
+        differences = {};
+        for (var i = 0; i < 4; i++) {
+          var alias = data[i].alias;
+          timestamps[alias] = new Date(data[i].latest);
+          differences[alias] = Math.round((now - timestamps[alias]) / 36000) / 100;
+        }
+
+        var t_isel = document.getElementById("t_isel");
+        t_isel.textContent = differences["isel"] + " h ago";
+        document.getElementById("isel").style.fill = "rgb(" + (155 + Math.max(0, 100 - differences["isel"] * 200)) + ",0,0)";
+
+
+        var t_robo = document.getElementById("t_robo");
+        t_robo.textContent = differences["robo"] + " h ago";
+        document.getElementById("robo").style.fill = "rgb(" + (155 + Math.max(0, 100 - differences["robo"] * 200)) + ",0,0)"; 
+
+
+        var t_saatopoyta = document.getElementById("t_saatopoyta");
+        t_saatopoyta.textContent = differences["säätöpöytä"] + " h ago";
+        document.getElementById("säätöpöytä").style.fill = "rgb(" + (155 + Math.max(0, 100 - differences["säätöpöytä"] * 200)) + ",0,0)";
+
+
+        var t_lounge = document.getElementById("t_lounge");
+        t_lounge.textContent = differences["lounge"] + " h ago";
+        document.getElementById("lounge").style.fill = "rgb(" + (155 + Math.max(0, 100 - differences["lounge"] * 200)) + ",0,0)";
+
+      }
+    }
+    xhttp.open("GET", "https://activity0.api.avaruuskerho.fi", true);
+    xhttp.send();
+  ]]></script>
+  <metadata
+     id="metadata4589">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs4587" />
+  <path
+     id="path4603"
+     d="m 254.27568,943.92524 -25.9859,-14.9788 H 177.52567 126.76154 V 866.44654 803.9465 H 65.260279 3.759029 l 0.25125,-394.75 0.25126,-394.750006 h 305.500041 305.4999 l 0.2511,457.240686 0.2511,457.24066 -155.2511,0.2593 -155.251,0.2593 -6.4052,3.9167 c -3.5229,2.1542 -7.0206,3.9167 -7.7728,3.9167 -0.7522,0 -1.6228,1.1625 -1.9346,2.5833 -1.638,7.4624 -6.7113,19.119 -8.2964,19.0621 -0.3251,-0.012 -12.2847,-6.7617 -26.5769,-15 z"
+     style="fill:none;stroke:#000000;stroke-width:9.69448853;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  <path
+     id="path4605"
+     d="M 251.00517,392.32127 V 649.50029 H 375.20341 V 392.32492 Z"
+     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.15875006px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+  <path
+     id="path4605-3"
+     d="M 613.89826,206.45058 H 316.83627 v 20.7005 h 297.05779 z"
+     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.94719827px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+  <path
+     id="path4605-6"
+     d="M 186.11465,20.346702 V 228.96202 h 20.85106 V 20.349656 Z"
+     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.79664367px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+  <path
+     id="path4605-7"
+     d="M 206.82179,207.54667 H -0.88204177 v 20.6477 H 206.81885 Z"
+     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.79101545px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+  <rect
+     y="803.67194"
+     x="126.76154"
+     height="125.27448"
+     width="324.31125"
+     id="isel"
+     style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.94204932;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  <rect
+     y="14.446494"
+     x="206.82036"
+     height="193.10019"
+     width="408.44113"
+     id="lounge"
+     style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.94204932;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  <path
+     id="robo"
+     d="M 3.9707113,733.79758 3.9308033,355.24527 H 149.7917 l 101.21347,37.076 0.005,343.36244 H 3.9458944 Z"
+     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.99732596px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+  <path
+     id="säätöpöytä"
+     d="M 150.07788,228.69796 H 444.73467 V 392.32127 H 251.00517 L 150.07788,355.64142 Z"
+     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.97133858;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:25px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="216.09903"
+     y="872.22797"
+     id="t_isel" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:25px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="45.494534"
+     y="538.1275"
+     id="t_robo" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:25px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="227.2323"
+     y="313.49826"
+     id="t_saatopoyta"></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:25px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="306.84772"
+     y="115.8814"
+     id="t_lounge"></text>
+</svg>
