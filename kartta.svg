@@ -122,8 +122,8 @@
       y="230" x="465"
       height="400" width="149"/>
     <text
-      xml:space="preserve"
-      x="250" y="415"
+      xml:space="preserve" style="font-size: 20px !important;"
+      x="480" y="415"
       id="text_elepiste" class="zone-labels">Data loading</text>
 
     <path
