@@ -39,6 +39,7 @@
       setZone("zone_robo", "text_robo", differences["robo"]);
       setZone("zone_saatopoyta", "text_saatopoyta", differences["säätöpöytä"]);
       setZone("zone_lounge", "text_lounge", differences["lounge"]);
+      setZone("zone_elepiste", "text_elepiste", differences["elepiste"]);
     }
 
     var xhttp = new XMLHttpRequest();
@@ -115,6 +116,15 @@
       xml:space="preserve"
       x="306.84772" y="115.8814"
       id="text_lounge" class="zone-labels">Data loading</text>
+
+    <rect
+      id="zone_elepiste" class="zones" 
+      y="230" x="465"
+      height="400" width="149"/>
+    <text
+      xml:space="preserve"
+      x="250" y="415"
+      id="text_elepiste" class="zone-labels">Data loading</text>
 
     <path
       id="zone_robo" class="zones"
