@@ -18,7 +18,7 @@
       var now = new Date();
       var timestamps = {};
       differences = {};
-      for (var i = 0; i < 4; i++) {
+      for (var i = 0; i < data.length; i++) {
         var alias = data[i].alias;
         timestamps[alias] = new Date(data[i].latest);
         differences[alias] = Math.round((now - timestamps[alias]) / 36000) / 100;
