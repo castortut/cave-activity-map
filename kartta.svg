@@ -29,10 +29,16 @@
       }
 
       function setZone(zone_id, text_id, timeSince) {
-        var text = document.getElementById(text_id);
-        var zone = document.getElementById(zone_id);
-        text.textContent = timeSince + "h ago";
-        zone.style.fill = color(timeSince);
+        var text_elem = document.getElementById(text_id);
+        var zone_elem = document.getElementById(zone_id);
+        let text = "";
+        if(text_elem.id == "text_elepiste") {
+            text = timeSince + "h";
+        } else {
+            text = timeSince + "h ago";
+        }
+        text_elem.textContent = text;
+        zone_elem.style.fill = color(timeSince);
       }
 
       setZone("zone_isel", "text_isel", differences["isel"]);
@@ -122,9 +128,13 @@
       y="230" x="465"
       height="400" width="149"/>
     <text
-      xml:space="preserve" style="font-size: 20px !important;"
+      xml:space="preserve" 
       x="480" y="415"
       id="text_elepiste" class="zone-labels">Data loading</text>
+    <text
+      xml:space="preserve" 
+      x="480" y="455"
+      id="text_elepiste2" class="zone-labels">ago</text>
 
     <path
       id="zone_robo" class="zones"
