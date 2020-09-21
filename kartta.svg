@@ -21,24 +21,38 @@
       for (var i = 0; i < data.length; i++) {
         var alias = data[i].alias;
         timestamps[alias] = new Date(data[i].latest);
-        differences[alias] = Math.round((now - timestamps[alias]) / 36000) / 100;
+        differences[alias] = Math.floor((now - timestamps[alias]) / 1000);
       }
 
-      function color(timeSince) {
-        return "rgb(" + (155 + Math.max(0, 100 - timeSince * 200)) + ",0,0)"
+      function color(seconds) {
+		const MAX_PERIOD = 3*3600;
+        return "rgb(" + (155 + Math.max(0, 100 - (seconds/MAX_PERIOD) * 100)) + ",0,0)"
       }
+	  
+	  function formatTime(seconds) {
+		//return seconds;
+		const hours = Math.floor(seconds / 3600);
+		const minutes = Math.floor((seconds - 3600 * hours) / 60);
+		const days = Math.floor(hours / 24);
+		
+		if (hours >= 48) {
+			return days + "d";
+		}
+		
+		if (hours >= 1) {
+			return hours + "h\n" + minutes + "min";
+		}
+		
+		else {
+			return minutes + "min";
+		}
+	  }
 
-      function setZone(zone_id, text_id, timeSince) {
+      function setZone(zone_id, text_id, seconds_since) {
         var text_elem = document.getElementById(text_id);
         var zone_elem = document.getElementById(zone_id);
-        let text = "";
-        if(text_elem.id == "text_elepiste") {
-            text = timeSince + "h";
-        } else {
-            text = timeSince + "h ago";
-        }
-        text_elem.textContent = text;
-        zone_elem.style.fill = color(timeSince);
+        text_elem.textContent = formatTime(seconds_since);;
+        zone_elem.style.fill = color(seconds_since);
       }
 
       setZone("zone_isel", "text_isel", differences["isel"]);
@@ -131,10 +145,6 @@
       xml:space="preserve" 
       x="480" y="415"
       id="text_elepiste" class="zone-labels">Data loading</text>
-    <text
-      xml:space="preserve" 
-      x="480" y="455"
-      id="text_elepiste2" class="zone-labels">ago</text>
 
     <path
       id="zone_robo" class="zones"
